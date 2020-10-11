@@ -75,53 +75,60 @@ class _MovieDetailState extends State<MovieDetail> {
                                         size)),
                                     snapshot.data.productionCompanies.length !=
                                             0
-                                        ? Column(
+                                        ? ExpansionTile(
+                                            title: Text('Company'),
                                             children: snapshot
                                                 .data.productionCompanies
                                                 .map<Widget>((e) {
-                                            return e.logoPath != null
-                                                ? Container(
-                                                  margin: EdgeInsets.all(10),
-                                                  child: Column(
-                                                      children: [
-                                                        Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceAround,
-                                                            children: [
-                                                              Container(
-                                                                  width:
-                                                                      size.width *
-                                                                          0.5,
-                                                                  child: Text(
-                                                                    e.name,
-                                                                    style: TextStyle(fontWeight: FontWeight.bold),
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .justify,
-                                                                    textDirection:
-                                                                        TextDirection
-                                                                            .ltr,
-                                                                  )),
-                                                              Expanded(
-                                                                child: Container(
-                                                                    child: Image.network(
-                                                                        'https://image.tmdb.org/t/p/original/' +
-                                                                            e.logoPath
-                                                                                .toString())),
-                                                              ),
-                                                            ]),
-                                                        Divider(
-                                                            color: ThemeData()
-                                                                .accentColor),
-                                                        SizedBox(
-                                                          height: 10,
-                                                        )
-                                                      ],
-                                                    ),
-                                                )
-                                                : Container();
-                                          }).toList())
+                                              return Container(
+                                                margin: EdgeInsets.all(10),
+                                                child: Column(
+                                                  children: [
+                                                    Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceAround,
+                                                        children: [
+                                                          Container(
+                                                              width:
+                                                                  size.width *
+                                                                      0.5,
+                                                              child: Text(
+                                                                e.name,
+                                                                style: TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .justify,
+                                                                textDirection:
+                                                                    TextDirection
+                                                                        .ltr,
+                                                              )),
+                                                          Expanded(
+                                                            child: Container(
+                                                              child: e.logoPath !=
+                                                                      null
+                                                                  ? Image.network(
+                                                                      'https://image.tmdb.org/t/p/original/' +
+                                                                          e.logoPath
+                                                                              .toString())
+                                                                  : Image.network(
+                                                                      'https://via.placeholder.com/200.png/09f/fff'),
+                                                            ),
+                                                          )
+                                                        ]),
+                                                    Divider(
+                                                        color: ThemeData()
+                                                            .accentColor),
+                                                    SizedBox(
+                                                      height: 10,
+                                                    )
+                                                  ],
+                                                ),
+                                              );
+                                            }).toList())
                                         : Container()
                                   ],
                                 ),
