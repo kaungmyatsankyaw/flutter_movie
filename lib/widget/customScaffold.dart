@@ -10,7 +10,15 @@ class CustomScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      body: widgetData,
+      body: Stack(
+        children: [
+          widgetData,
+          Container(
+            height: 30,
+            child: Text('Detail'),
+          )
+        ],
+      ),
     );
   }
 }

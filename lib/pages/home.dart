@@ -4,7 +4,7 @@ import 'package:movie/constants.dart';
 import 'package:movie/widget/homePage.dart';
 
 class HomePage extends StatelessWidget {
-  List homePageList = [
+  final List homePageList = [
     {'title': 'Popular', 'url': popuarlMovie},
     {'title': 'Now Playing', 'url': nowPlaying},
     {'title': 'UpComing', 'url': upComingMovie},
