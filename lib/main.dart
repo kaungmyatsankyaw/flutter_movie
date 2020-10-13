@@ -1,6 +1,5 @@
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:movie/constants.dart';
 import 'package:movie/pages/home.dart';
 import 'package:movie/pages/tv.dart';
@@ -22,9 +21,9 @@ void main() {
           create: (context) => NetworkStatus(),
           dispose: (context, service) => service.disposeStreams(),
         ),
-        ChangeNotifierProvider<Movie>(
-          create: (context) => Movie(),
-        )
+        // FutureProvider<MovieProvider>(
+        //   create: (context) => MovieProvider().create(),
+        // ),
       ],
       child: MyApp(),
     ),

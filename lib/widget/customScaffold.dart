@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:movie/providerModels/movie.dart';
 import 'package:movie/widget/appBar.dart';
+import 'package:provider/provider.dart';
 
 class CustomScaffold extends StatelessWidget {
   final Widget widgetData;
@@ -8,34 +10,12 @@ class CustomScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // var breadCrumb = Provider.of<MovieProvider>(context);
+
     return Scaffold(
       appBar: CustomAppBar(),
-      body: Stack(
-        children: [
-          Container(
-              margin: EdgeInsets.symmetric(vertical: 18), child: widgetData),
-          Positioned(
-            top: 0,
-            child: Container(
-              margin: EdgeInsets.symmetric(vertical: 0),
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              width: MediaQuery.of(context).size.width,
-              height: 30,
-              decoration: BoxDecoration(
-                  color: Theme.of(context).copyWith().bottomAppBarColor,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Theme.of(context).copyWith().accentColor.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 3,
-                      // offset: Offset(0, 0), // changes position of shadow
-                    ),
-                  ]),
-              child: Text('Detail'),
-            ),
-          )
-        ],
-      ),
+      body: widgetData
     );
   }
 }
+
