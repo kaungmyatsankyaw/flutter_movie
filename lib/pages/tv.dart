@@ -62,7 +62,8 @@ class _TvState extends State<Tv> {
                 ? Container(
                     child: Center(child: CircularProgressIndicator()),
                   )
-                : Row(
+                : 
+                Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

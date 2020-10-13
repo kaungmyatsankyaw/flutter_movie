@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
     {'title': 'Popular', 'url': popuarlMovie},
     {'title': 'Now Playing', 'url': nowPlaying},
     {'title': 'UpComing', 'url': upComingMovie},
-    // {'title': 'Popular', 'url': popuarlMovie},
+        // {'title': 'Popular', 'url': popuarlMovie},
   ];
 
   @override

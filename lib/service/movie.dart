@@ -15,6 +15,13 @@ class MovieApi {
 
   Future<MovieDetailModel> getDetail(String url) async {
     var result = await _apiService.getMethod(url);
-    return  MovieDetailModel.fromJson(result);
+    return MovieDetailModel.fromJson(result);
+  }
+
+  Future<List<MovieList>> getMoviePagination(String url, int page) async {
+    var result = await _apiService.getDataWithPagination(url, page);
+    var tv =
+        result['results'].map<MovieList>((e) => MovieList.fromJson(e)).toList();
+    return tv;
   }
 }

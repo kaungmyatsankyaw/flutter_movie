@@ -10,12 +10,6 @@ class CustomScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var breadCrumb = Provider.of<MovieProvider>(context);
-
-    return Scaffold(
-      appBar: CustomAppBar(),
-      body: widgetData
-    );
+    return Scaffold(appBar: CustomAppBar(), body: widgetData);
   }
 }
-

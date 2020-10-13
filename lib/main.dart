@@ -2,6 +2,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:movie/constants.dart';
 import 'package:movie/pages/home.dart';
+import 'package:movie/pages/setting.dart';
 import 'package:movie/pages/tv.dart';
 import 'package:movie/providerModels/movie.dart';
 import 'package:movie/providerModels/networkStatus.dart';
@@ -40,7 +41,8 @@ class _MyAppState extends State<MyApp> {
 
   List pages = [
     {'page': HomePage()},
-    {'page': Tv()}
+    {'page': Tv()},
+    {'page': Setting()}
   ];
 
   void selectPage(int pageIndex) {

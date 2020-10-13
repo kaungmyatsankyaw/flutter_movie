@@ -1,4 +1,4 @@
-#Tue Oct 13 13:41:36 MMT 2020
+#Tue Oct 13 16:18:43 MMT 2020
 base.0=/home/kms/Documents/movie/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

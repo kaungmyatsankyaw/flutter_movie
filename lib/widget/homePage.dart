@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movie/dataModels/moviesList.dart';
 import 'package:movie/pages/movieDetail.dart';
+import 'package:movie/pages/movieList.dart';
 import 'package:movie/service/movie.dart';
 
 // ignore: must_be_immutable
@@ -19,7 +20,10 @@ class HomePageWidget extends StatelessWidget {
             Text(this.title,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19)),
             FlatButton.icon(
-                onPressed: null,
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (_) => MovieListPage(url:url)));
+                },
                 icon: Icon(Icons.all_inclusive),
                 label: Text(
                   'See All',
@@ -43,7 +47,8 @@ class HomePageWidget extends StatelessWidget {
                           child: GestureDetector(
                             onTap: () => Navigator.of(context).push(
                                 MaterialPageRoute(
-                                    builder: (context) => MovieDetail(id:snapshot.data[index].id))),
+                                    builder: (context) => MovieDetail(
+                                        id: snapshot.data[index].id))),
                             child: Card(
                               semanticContainer: true,
                               child:
